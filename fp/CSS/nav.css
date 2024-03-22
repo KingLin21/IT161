@@ -1,0 +1,86 @@
+/* Global rules */
+.topnav {
+    margin: auto;
+    background-color: #012501; /* Dark green background */
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px; /* Adds space below the navigation bar */
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f0ead6; /* Light text color */
+    text-align: center;
+    padding: 12px 20px; /* Increased padding for a larger button appearance */
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    border: 2px solid transparent; /* Optional: adds a border that becomes visible on hover */
+}
+
+/* Updated: Correcting the selector for hover state */
+.topnav a:hover, .topnav a.active {
+    background-color: #0d4c0d; /* Slightly darker green for hover/active state */
+    color: #f0ead6; /* Maintains the light text color */
+    border-color: #f0ead6; /* Optional: makes the border visible on hover/active */
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* Responsive rules - apply when screen width is less than 1200px */
+
+@media screen and (max-width: 1199px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    
+    .topnav.responsive {
+        position: relative;
+    }
+    
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+
+/* DESKTOP */
+@media all and (min-width:1200px) {
+    .topnav {
+        width: 80%;
+    }
+}
+
+/* TABLET */
+@media all and (min-width:501px) and (max-width:1199px) {
+    .topnav {
+        width: 90%;
+    }
+}
+
+/* PHONE */
+@media all and (max-width:500px) {
+    .topnav {
+        width: 100%;
+    }
+}

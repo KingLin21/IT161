@@ -1,0 +1,496 @@
+/* Global rules */
+
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Playfair+Display:wght@400;700&display=swap');
+
+html {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95em;
+    line-height: 1.5em;
+    background-color: #012501; /* Dark green background applied */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures background covers the viewport without repeating */
+}
+
+body{
+    margin:0; /* removes gap at top of page */
+}
+
+::selection {
+    color: #f0ead6; 
+    background: #0d4c0d;
+}
+
+h1 {
+    font-weight: normal;
+    margin: auto;
+    background: #012501;
+    color: #f0ead6;
+    line-height: 2.5em;
+}
+/*
+ The border radius on h1.page-header and main.wrapper provide the 
+ curved corners that appear on the body area of the page
+*/
+h1.page-header{
+    font-family: 'Italianno', cursive;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #012501; /* Dark green to maintain consistency with the theme */
+    color: #f0ead6; /* Eggshell white for the text, enhancing visibility */
+    text-align: center;
+    font-size: 104px;
+ }
+ 
+
+ main.wrapper {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #012501;
+    overflow: auto;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+ }
+ 
+
+p {
+    margin: 1em; /* Top Right Bottom Left (TRBL) */
+    color:#f0ead6;
+    text-align: center;
+}
+
+h2,h3 {
+    font-weight: bold;
+    margin-left: 1em;
+    line-height: 1em;
+    color:#f0ead6;
+    font-size: 24px;
+}
+
+a {
+    color: #FF7F50;
+    text-decoration: none;
+}
+
+a:hover {
+    color: whitesmoke;
+    background-color: #0d4c0d;
+    text-decoration: none;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    padding: 1em;
+}
+
+/* start positioning styles */
+/* Allows box to take up full space, ignoring padding/margin */
+* {
+    box-sizing: border-box;
+  }
+ 
+  .carousel {
+    width: 100%; /* Set to full width */
+    max-width: 1200px; /* Set a maximum width to maintain responsiveness */
+    height: 600px; /* Adjust the height as desired */
+    margin: auto;
+    position: relative;
+}
+
+.carousel-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    object-fit: contain;
+    border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+}
+
+.carousel-images img.active {
+    display: block; /* Show active image */
+}
+
+.flexible {
+        display: flex;
+        align-items: center; /* Align items vertically */
+        justify-content: space-around; /* Distribute space between items */
+    }
+
+    .flexible-content {
+        flex: 1; /* Let the content flex to occupy remaining space */
+        max-width: 70%; /* Limit the width of content to 50% of the container */
+    }
+
+    .flexible-content img {
+        max-width: 65%; /* Ensure the image doesn't overflow its container */
+        height: auto; /* Maintain aspect ratio */
+        border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+    }
+
+.read-more-button {
+    display: inline-block;
+    background-color: #0d4c0d; /* Adjust the color to fit your design */
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px; /* Adds some space above the button */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.read-more-button:hover {
+    background-color: #f0ead6;
+    color: #012501;
+}
+.photo-flex {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 10px; /* Adjust gap between items as needed */
+}
+
+.photo-flex div {
+    flex: 1;
+    min-width: 200px; /* Minimum width for each image container */
+    height: 250px; /* Adjust based on desired height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures images don't spill out of their containers */
+}
+
+.photo-flex img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the available space */
+    border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+}
+
+
+.photo-row {
+    display: flex;
+    justify-content: space-around; /* This will evenly space your images */
+    align-items: center; /* Aligns images vertically */
+    gap: 20px; /* Adds space between the images */
+}
+
+.photo-row div {
+    display: flex;
+    justify-content: center; /* Centers the image in the div */
+    align-items: center; /* Vertically aligns the image in the div */
+    /* Remove flex: 1 to prevent shrinking */
+}
+
+.photo-row img {
+    max-width: 100%; /* Ensures images do not exceed their container's width */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 900px; /* Prevents images from becoming too large. Adjust as needed. */
+    border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+}
+
+.photo-row1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px; /* Adjust the gap between images */
+}
+
+.photo-row1 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid #012501; /* Add border to each image container */
+    border-radius: 5px; /* Add rounded corners to the border */
+}
+
+.photo-row1 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+
+}
+.shop-now-button {
+    display: inline-block;
+    background-color: #0d4c0d; /* Adjust the color to fit your design */
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 20px; /* Adds some space above the button */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.shop-now-button:hover {
+    background-color: #f0ead6;
+    color: #012501;
+}
+
+ 
+
+  @media all and (max-width:500px) {
+    .my-column {
+        width: 100%;
+      }
+ }
+  
+ 
+ .fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+   .fa:hover {
+      opacity: 0.7;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+    padding: 20px 25px;
+ } 
+   .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+   .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+   .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+   .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .social-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+
+  /* flexible image rules start here */
+
+  
+
+
+
+/* end positioning styles */
+
+
+/* Responsive rules */
+
+/* DESKTOP */
+@media all and (min-width:1200px) {
+    main.wrapper {
+        width: 95%;
+        margin: auto;
+    }
+    
+    h1 {
+        width: 79%;
+        padding-left: 1%;
+    }
+    
+    picture.profile img {
+        width: 50%;
+        float: left;
+        margin-right: 2em;
+    }
+    
+}
+
+/* TABLET */
+@media all and (min-width:501px) and (max-width:1199px) {
+    main.wrapper {
+        width: 95%;
+        margin: auto;
+    }
+    
+    h1 {
+        width: 89%;
+        padding-left: 1%;
+    }
+    
+    picture.profile img {
+        width: 50%;
+        float: right;
+        margin-left: 1em;
+    }
+
+    .photo-flex {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center; /* Centers items horizontally */
+        align-items: center; /* Centers items vertically */
+        gap: 10px; /* Adjust gap between items as needed */
+    }
+    
+    .photo-flex div {
+        flex: 1;
+        min-width: 200px; /* Minimum width for each image container */
+        height: 250px; /* Adjust based on desired height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Ensures images don't spill out of their containers */
+    }
+    
+    .photo-flex img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the available space */
+    }
+    .carousel {
+        width: 100%; /* Make the carousel width responsive */
+        height: auto; /* Adjust height automatically based on the content */
+        position: relative;
+    }
+
+    .carousel-images img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 300px; /* You can adjust this value */
+        width: auto;
+        height: auto;
+        display: none; /* Hide images initially */
+        object-fit: contain;
+    }
+
+    .carousel-images img.active {
+        display: block; /* Show active image */
+    }
+}
+
+
+
+
+
+/* PHONE */
+@media all and (max-width:500px) {
+    main.wrapper {
+        width: 95%;
+    }
+    h1.page-header {
+        font-size: 64px; /* Adjust font size as needed */
+        margin: 10px auto; /* Center the header horizontally */
+        padding: 10px 0; /* Add padding above and below the header for spacing */
+        line-height: 1; /* Adjust line height to eliminate vertical gap between words */
+    }
+    
+    h1 {
+        width: 99%;
+        padding-left: 1%;
+    }
+    
+    picture.profile img {
+        width: 100%;
+    }
+    .photo-flex {
+        justify-content: center; /* Adjusts horizontal alignment */
+        align-items: center; /* Adjusts vertical alignment, consider 'stretch' for equal height */
+        flex-wrap: wrap; /* Ensures items can wrap within container */
+    }
+    .photo-flex div {
+        flex: 1 1 100%; /* Each container takes full width of the .photo-flex container */
+        height: auto; /* Height adjusts to content */
+    }
+
+    
+
+    .photo-flex img {
+        max-width: 300px; /* Ensures images fill their containers */
+        height: auto; /* Maintains aspect ratio */
+        object-fit: contain; /* Adjust if you prefer 'cover', but 'contain' ensures no cropping */
+    }
+    .flexible {
+        display: flex;
+        align-items: center; /* Align items vertically */
+        justify-content: space-around; /* Distribute space between items */
+    }
+
+    .flexible-content {
+        flex: 1; /* Let the content flex to occupy remaining space */
+        max-width: 90%; /* Limit the width of content to 50% of the container */
+    }
+
+    .flexible-content img {
+        max-width: 65%; /* Ensure the image doesn't overflow its container */
+        height: auto; /* Maintain aspect ratio */
+        border: 3px solid #f0ead6; /* Add a border to artwork images */        
+    border-radius: 5px; /* Optional: Add rounded corners to the border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+    }
+    .photo-row {
+        flex-direction: column;
+    }
+    
+    .photo-row img {
+        max-width: 80%; /* Allows the image to take more width on smaller screens */
+        margin: 0 auto; /* Centers the image */
+    }
+
+    /* Ensure buttons are full-width and stacked */
+    .button-style, .read-more-button {
+        display: block; /* Make buttons block level for full width */
+        width: 90%; /* Adjust button width to fit mobile screens */
+        margin: 10px auto; /* Center buttons horizontally and add vertical spacing */
+        padding: 12px 0; /* Adjust padding for better tap-ability */
+    }
+    .carousel {
+        width: 90%; /* Adjusts the width to be responsive, leaving some margin */
+        height: 275px; /* Sets a minimum height to avoid the box becoming too small */
+        margin: 20px auto; /* Centers the carousel on the screen */
+    }
+
+    .carousel-images img {
+        /* Resets positioning and sizing properties to fit the new container dimensions */
+        position: relative; /* Switching back to relative if absolute positioning causes issues */
+        top: auto; /* Resetting these properties */
+        left: auto;
+        transform: none;
+        max-width: 100%; /* Ensures the image does not exceed the container's width */
+        max-height: 500px; /* Ensures the image does not exceed the container's height */
+        height: auto; /* Adjusts height automatically to maintain aspect ratio */
+        object-fit: contain; /* Keeps the entire image visible, may introduce some letterboxing */
+        display: none; /* Keeps non-active images hidden */
+    }
+
+    .carousel-images img.active {
+        display: block; /* Ensures the active image is shown */
+    }
+}
+    
+
